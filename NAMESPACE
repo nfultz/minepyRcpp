@@ -1,0 +1,3 @@
+useDynLib(minepyRcpp)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
