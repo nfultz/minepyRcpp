@@ -6,20 +6,16 @@
 using namespace Rcpp;
 
 // mine
-double mine(NumericVector x, NumericVector y, double alpha = .06, double c = 15);
+double mine(NumericVector x, NumericVector y, double alpha, double c);
 RcppExport SEXP minepyRcpp_mine(SEXP xSEXP, SEXP ySEXP, SEXP alphaSEXP, SEXP cSEXP) {
 BEGIN_RCPP
-    SEXP __sexp_result;
-    {
-        Rcpp::RNGScope __rngScope;
-        Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP );
-        Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP );
-        Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP );
-        Rcpp::traits::input_parameter< double >::type c(cSEXP );
-        double __result = mine(x, y, alpha, c);
-        PROTECT(__sexp_result = Rcpp::wrap(__result));
-    }
-    UNPROTECT(1);
-    return __sexp_result;
+    Rcpp::RObject __result;
+    Rcpp::RNGScope __rngScope;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type y(ySEXP);
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< double >::type c(cSEXP);
+    __result = Rcpp::wrap(mine(x, y, alpha, c));
+    return __result;
 END_RCPP
 }
